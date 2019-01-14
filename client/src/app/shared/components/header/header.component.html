@@ -1,0 +1,13 @@
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="main-logo p-t-10"><a href="/"><img src="./../../assets/Logo_ML.png" srcset="./../../assets/Logo_ML.png 1x, ./../../assets/Logo_ML@2x.png.png 2x"
+           role="img" alt="Mercado Libre Inicio"></a></div>
+      <div class="search-product p-t-10">        
+        <input id="productSearch" name="productSearch" areia-label="Palabras de busqueda" type="text" autofocus [(ngModel)]="searchKeyword" placeholder="Nunca dejes de Buscar" (keyup.enter)="getItems()" />
+        <button aria-label="Buscar productos" (click)="getItems()" [disabled]="!searchKeyword"><img src="./../../assets/ic_Search.png" srcset="./../../assets/ic_Search.png 1x, ./../../assets/ic_Search@2x.png.png 2x"
+            alt="Buscador de productos"> </button>        
+      </div>
+    </div>
+  </div>
+</header>

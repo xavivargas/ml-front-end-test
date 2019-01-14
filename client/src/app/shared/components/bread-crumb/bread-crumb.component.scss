@@ -1,0 +1,28 @@
+@import './../../styles/core-variables';
+@import './../../styles/core-mixins';
+
+.breadcrumb {
+  grid-column: 2/11;
+
+  ul {
+    padding: 0;
+    margin: 16px 0px;
+    font-size: $font-14;
+    display: flex;
+
+    li {
+      color: $ml-text-color-grey;
+
+      .separator {
+        margin: 0 5px;
+      }
+    }
+  }
+}
+
+@include phone {
+  .breadcrumb {
+    display: none;
+    height: 0px;
+  }
+}

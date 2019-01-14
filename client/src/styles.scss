@@ -1,0 +1,68 @@
+@import 'app/shared/styles/core-variables';
+@import 'app/shared/styles/core-mixins';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  background-color: $ml-text-color-light;
+  font-family: $ml-font-family-main;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  background-color: $ml-main-color;
+  height: $ml-header-height;
+  left: 0;
+  right: 0;
+  position: absolute;
+  z-index: 9999;
+  align-self: center;
+
+}
+
+.main {
+  left: 0;
+  right: 0;
+  position: absolute;
+  top: $ml-header-height;
+  align-self: center;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 16px;
+}
+
+.line-breaker {
+  white-space: pre-line;
+  word-wrap: break-word;
+}
+
+@include desktop {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+@include phone {
+  .container {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

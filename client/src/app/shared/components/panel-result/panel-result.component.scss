@@ -1,0 +1,52 @@
+@import './../../styles/core-variables';
+@import './../../styles/core-mixins';
+
+.ml-info {
+  position: relative;
+  background: transparent;
+  top: $ml-header-height;
+
+  .container {
+    .row {
+      .panel-box {
+        grid-column: 2/12;
+        margin: 20px 0 0;
+        border-top: none;
+        background-color: #fff;
+        background-image: linear-gradient($ml-text-color-light, #fff 25px);
+        border: 1px solid #ededed;
+        border-radius: 5px;
+        padding: 10px;
+
+        .header-title {
+          color: $ml-text-color-orange;
+          font-size: $font-18;
+
+          @media phone {
+            font-size: 16px;
+          }
+
+          font-weight: $font-regular;
+          margin: 0;
+          padding: 0 0 0 5px;
+          margin-block-start: 1em;
+          margin-block-end: 1em;
+          margin-inline-start: 0px;
+          margin-inline-end: 0px;
+        }
+
+        ul {
+          @include phone {
+            font-size: 14px;
+          }
+
+          li {
+            background: url('../../../../assets/bullet-zrp.png') no-repeat scroll 15px 8px transparent;
+            line-height: 24px;
+            padding-left: 30px;
+          }
+        }
+      }
+    }
+  }
+}

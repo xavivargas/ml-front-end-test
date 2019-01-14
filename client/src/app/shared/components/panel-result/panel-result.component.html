@@ -1,0 +1,25 @@
+<div class="ml-info">
+  <div class="container">
+    <div class="row">
+      <div class="panel-box" *ngIf="showWelcome">
+        <h3 class="header-title">Escribí en el buscador lo que querés encontrar</h3>
+        <ul>
+          <li><strong>Escribí tu búsqueda</strong> en el campo que figura en la parte superior de la pantalla.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="panel-box" *ngIf="noResult">
+        <div class="info">
+          <h3>
+            No hay publicaciones que coincidan con tu búsqueda.
+          </h3>
+          <ul>
+            <li>Revisá la ortografía de la palabra.</li>
+            <li>Utilizá palabras más genéricas o menos palabras.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

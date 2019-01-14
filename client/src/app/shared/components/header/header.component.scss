@@ -1,0 +1,65 @@
+ @import './../../styles/core-variables';
+ @import './../../styles/core-mixins';
+ @import './../../styles/utils/spacing-helpers';
+
+ header {
+   .container {
+     .row {
+       align-items: center;
+       height: 100%;
+
+       .main-logo {
+         grid-column: 2;
+       }
+
+       .search-product {
+         margin: 0;
+         grid-column: 3/12;
+         align-self: center;
+         display: flex;
+         flex-direction: row;
+
+         input[type="text"] {
+           flex-grow: 1;
+           height: 20px;
+           padding: 10px;
+           box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+           @include border-radius(4px 0 0 4px);
+           border: none;
+           font-size: $font-18;
+           @include remove-border();
+
+           ::placeholder {
+             color: $ml-text-color-light;
+             font-size: $font-18;
+           }
+         }
+
+         button {
+           cursor: pointer;
+           height: 40px;
+           width: 40px;
+           @include border-radius(4px 0 0 4px);
+           border: none;
+           background: $ml-text-color-light;
+           box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+           @include remove-border();
+
+           &:disabled,
+           &[disabled] {
+             border: 1px solid $ml-text-color-grey;
+             background-color: $ml-text-color-grey;
+             color: $ml-text-color-regular;
+             cursor: none;
+           }
+         }
+       }
+     }
+   }
+ }
+
+ @include phone { 
+   .search-product input {
+     width: 100%;
+   }
+ }

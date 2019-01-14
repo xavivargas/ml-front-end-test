@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="breadcrumb">
+    <ul>
+      <li class="breadcrumb-item" *ngFor="let item of breadcrumbList.categories; let i = index">
+        <span>{{ item }}</span>
+        <span class="separator" *ngIf="i!==breadcrumbList.categories.length-1">></span>
+      </li>
+    </ul>
+  </div>
+</div>

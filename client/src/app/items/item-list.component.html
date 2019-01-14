@@ -1,0 +1,42 @@
+<app-header></app-header>
+<app-panel-result [showWelcome]="showWelcome" [noResult]="noResult"></app-panel-result>
+<div class="main" *ngIf="productList.items && productList.items.length > 0">
+  <div class="container">
+    <app-bread-crumb [breadcrumbList]="productList"></app-bread-crumb>
+    <div class="row">
+      <div class="search-results">
+        <ul role="tree">
+          <li class="item" *ngFor="let item of productList.items; let ind=index;" role="treeitem" aria-expanded="true">
+            <article class="row">
+              <div class="image-content">
+                <a class="item-thumbnail" [routerLink]="['/items',item.id]" role="link" aria-label="Acceder al detalle del producto">
+                  <img class="article-img" [src]="item.picture" [title]="item.title" [alt]="item.title" role="img" />
+                </a>
+              </div>
+              <div class="item-info">
+                <div class="row">
+                  <div class="title">
+                    <span>{{ formatAmnt(item.price) }}</span>
+                    <img src="./../../assets/ic_shipping.png" *ngIf="item.free_shipping" srcSet="./../../assets/ic_shipping.png 1x, ./../../assets/ic_shipping@2x.png.png 2x"
+                      role="img" aria-label="Imagen Descripcion del producto" alt="Free Shipping" />
+                  </div>
+                  <div class="state-name">
+                    <span>{{item.state}}</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="product-name">
+                    <a aria-label="Acceder al detalle del producto" role="link" [routerLink]="['/items',item.id]">
+                      {{ item.title }}
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="separator" *ngIf="ind < 3"></div>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

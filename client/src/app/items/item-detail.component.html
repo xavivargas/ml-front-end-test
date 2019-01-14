@@ -1,0 +1,43 @@
+<app-header></app-header>
+<div class="main">
+  <div class="container">
+    <app-bread-crumb [breadcrumbList]="searchResult"></app-bread-crumb>
+    <div class="row">
+      <div class="item-detail" *ngIf="item && item.id">
+        <article class="row">
+          <div class="layout-image">
+            <img [src]="item.picture" alt="item picture" role="img" />
+          </div>
+          <div class="layout-description">
+            <div class="condition">
+              <span> {{item.condition === 'new' ? 'Nuevo' : 'Usado' }} - {{item.sold_quantity}} vendidos</span>
+            </div>
+            <div class="title">
+              {{item.title }}
+            </div>
+            <div class="price-tag">
+              <h2>
+                <span>{{ formatAmnt(item.price) }}</span>
+              </h2>
+            </div>
+            <div class="item-actions">
+              <button>Comprar</button>
+            </div>
+          </div>
+        </article>
+        <section class="row" *ngIf="item.description">
+          <article class="product-description">
+            <div class="title">
+              <h2>Descripci&oacute;n del producto</h2>
+            </div>
+            <div class="detail" class="line-breaker">
+              <p>
+                {{ item.description }}
+              </p>
+            </div>
+          </article>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
